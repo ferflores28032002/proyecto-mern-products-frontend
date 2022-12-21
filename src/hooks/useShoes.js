@@ -6,7 +6,7 @@ import baseUrl from "../Api/baseUrl";
 
 export const useShoes = () => {
 
-  const [products, setProducts] = useState([])
+  const [shoes, setProducts] = useState([])
 
   const addImagenes = async ({ name, description, category, price, image}) => {
         
@@ -67,12 +67,13 @@ const addImagenesForId = async ({ id,image}) => {
 }
 
 
-const product = async (req, res) => {
+const shoess = async () => {
 
   try {
     
     const { data } = await baseUrl.get("/shoes")
     setProducts(data.productos)
+    console.log(data)
 
   } catch (error) {
     console.log(error)
@@ -85,7 +86,7 @@ const product = async (req, res) => {
     // Métodos
     addImagenes,
     addImagenesForId,
-    products,
-    product
+    shoess,
+    shoes
   };
 };

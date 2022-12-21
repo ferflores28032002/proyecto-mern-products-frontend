@@ -3,11 +3,8 @@ import { toast } from "react-toastify";
 import { useShoes, useForms } from "../hooks/";
 
 const FormShoes = () => {
-  const { addImagenes, product, products } = useShoes();
+  const { addImagenes} = useShoes();
 
-  useEffect(() => {
-    product();
-  }, []);
   const { onInputChange, name, description, category, price, onResetForm } =
     useForms({
       name: "",
@@ -108,14 +105,6 @@ const FormShoes = () => {
         </div>
       </form>
 
-
-    <h1 className="mt-10">Shoes</h1>
-
-      <div>
-        {products?.map(pro => (
-          <h1>{pro.name}</h1>
-        ))}
-      </div>
     </>
   );
 };
